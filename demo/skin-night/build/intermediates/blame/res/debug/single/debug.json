@@ -1,0 +1,154 @@
+[
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-hdpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-hdpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-hdpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-hdpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xhdpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xhdpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/color_app_text_color.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/src/main/res/color/app_text_color.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_built_in_24dp.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_built_in_24dp.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-hdpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-hdpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxhdpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_default_24dp.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_default_24dp.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxhdpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-mdpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-mdpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-mdpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-mdpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xhdpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xhdpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-ldpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-ldpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-mdpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-mdpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-mdpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-mdpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-hdpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-hdpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-ldpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-ldpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxhdpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xhdpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xhdpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/color_navigation_item_tint.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/src/main/res/color/navigation_item_tint.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_sd_card_24dp.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_sd_card_24dp.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-mdpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-mdpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xhdpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xhdpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxhdpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-ldpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-ldpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-ldpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-ldpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_plug_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_plug_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_sd_card_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_sd_card_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_color_picker_24dp.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_color_picker_24dp.xml"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-ldpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-ldpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxhdpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxhdpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-hdpi_ic_color_picker_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-hdpi/ic_color_picker_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xhdpi_ic_built_in_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xhdpi/ic_built_in_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-xxxhdpi_ic_default_24dp.png.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_default_24dp.png"
+    },
+    {
+        "merged": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/intermediates/res/merged/debug/drawable-anydpi-v21_ic_plug_in_24dp.xml.flat",
+        "source": "/Users/anthony/workspace/zine/Android-skin-support/demo/skin-night/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_plug_in_24dp.xml"
+    }
+]

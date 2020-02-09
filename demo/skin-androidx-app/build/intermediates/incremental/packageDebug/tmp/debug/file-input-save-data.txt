@@ -1,0 +1,15 @@
+#Internal package file, do not edit.
+#Sun Feb 09 19:17:26 CST 2020
+1.base=/Users/anthony/workspace/zine/Android-skin-support/demo/skin-androidx-app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
+2.path=classes.dex
+0.baseType=DIRECTORY
+2.base=/Users/anthony/workspace/zine/Android-skin-support/demo/skin-androidx-app/build/intermediates/transforms/dexMerger/debug/0
+2.set=DEX
+1.baseType=DIRECTORY
+count=3
+1.set=ASSET
+0.path=zip_res.zip
+0.set=ASSET
+0.base=/Users/anthony/workspace/zine/Android-skin-support/demo/skin-androidx-app/build/intermediates/merged_assets/debug/mergeDebugAssets/out
+2.baseType=DIRECTORY
+1.path=skins/night.skin

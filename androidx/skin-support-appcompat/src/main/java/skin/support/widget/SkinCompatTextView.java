@@ -2,7 +2,10 @@ package skin.support.widget;
 
 import android.content.Context;
 import androidx.annotation.DrawableRes;
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatTextView;
+
+import android.content.res.ColorStateList;
 import android.util.AttributeSet;
 
 /**
@@ -12,6 +15,7 @@ import android.util.AttributeSet;
 public class SkinCompatTextView extends AppCompatTextView implements SkinCompatSupportable {
     private SkinCompatTextHelper mTextHelper;
     private SkinCompatBackgroundHelper mBackgroundTintHelper;
+    private SkinCompatTextViewDrawableTintHelper mDrawableTintHelper;
 
     public SkinCompatTextView(Context context) {
         this(context, null);
@@ -25,6 +29,8 @@ public class SkinCompatTextView extends AppCompatTextView implements SkinCompatS
         super(context, attrs, defStyleAttr);
         mBackgroundTintHelper = new SkinCompatBackgroundHelper(this);
         mBackgroundTintHelper.loadFromAttributes(attrs, defStyleAttr);
+        mDrawableTintHelper = new SkinCompatTextViewDrawableTintHelper(this);
+        mDrawableTintHelper.loadFromAttributes(attrs, defStyleAttr);
         mTextHelper = SkinCompatTextHelper.create(this);
         mTextHelper.loadFromAttributes(attrs, defStyleAttr);
     }
@@ -36,6 +42,7 @@ public class SkinCompatTextView extends AppCompatTextView implements SkinCompatS
             mBackgroundTintHelper.onSetBackgroundResource(resId);
         }
     }
+
 
     @Override
     public void setTextAppearance(int resId) {
@@ -69,12 +76,23 @@ public class SkinCompatTextView extends AppCompatTextView implements SkinCompatS
     }
 
     @Override
+    public void setCompoundDrawableTintList(@Nullable ColorStateList tint) {
+        super.setCompoundDrawableTintList(tint);
+        if (mDrawableTintHelper != null) {
+            mDrawableTintHelper.setDrawableTintColorStateList(tint);
+        }
+    }
+
+    @Override
     public void applySkin() {
         if (mBackgroundTintHelper != null) {
             mBackgroundTintHelper.applySkin();
         }
         if (mTextHelper != null) {
             mTextHelper.applySkin();
+        }
+        if (mDrawableTintHelper != null) {
+            mDrawableTintHelper.applySkin();
         }
     }
 
