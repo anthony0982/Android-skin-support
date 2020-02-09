@@ -1,4 +1,0 @@
-#Sun Feb 09 19:17:26 CST 2020
-base.0=/Users/anthony/workspace/zine/Android-skin-support/demo/skin-androidx-app/build/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex

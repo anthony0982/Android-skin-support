@@ -4,7 +4,6 @@ include ':demo:skin-night'
 //include ':demo:skin-app'
 
 // DEMO for androidx
-include ':demo:skin-androidx-app'
 
 // for android support
 //include ':android-support:skin-support'

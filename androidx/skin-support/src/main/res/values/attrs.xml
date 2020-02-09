@@ -35,4 +35,7 @@
         <attr name="android:indeterminateDrawable" />
         <attr name="android:progressDrawable" />
     </declare-styleable>
+    <declare-styleable name="SkinCompatTint">
+        <attr name="drawableTint" />
+    </declare-styleable>
 </resources>
