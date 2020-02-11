@@ -24,17 +24,21 @@ import skin.support.SkinCompatManager;
 import skin.support.utils.ImageUtils;
 import skin.support.utils.SkinPreference;
 import skin.support.utils.Slog;
+import skin.support.widget.SkinCompatHelper;
 
 import static skin.support.content.res.ColorState.checkColorValid;
 import static skin.support.content.res.ColorState.toJSONObject;
+import static skin.support.widget.SkinCompatHelper.INVALID_ID;
 
 public class SkinCompatUserThemeManager {
     private static final String TAG = "SkinCompatUserThemeManager";
     private static final String KEY_TYPE = "type";
     private static final String KEY_TYPE_COLOR = "color";
     private static final String KEY_TYPE_DRAWABLE = "drawable";
+    private static final String KEY_TYPE_DRAWABLE_ID = "drawable_id";
     private static final String KEY_DRAWABLE_NAME = "drawableName";
     private static final String KEY_DRAWABLE_PATH_AND_ANGLE = "drawablePathAndAngle";
+    private static final String KEY_DRAWABLE_ID = "drawableId";
 
     private static SkinCompatUserThemeManager INSTANCE = new SkinCompatUserThemeManager();
 
@@ -44,6 +48,7 @@ public class SkinCompatUserThemeManager {
     private boolean mColorEmpty;
 
     private final HashMap<String, String> mDrawablePathAndAngleMap = new HashMap<>();
+    private final HashMap<String, Integer> mDrawableResIdMap = new HashMap<>();
     private final Object mDrawableCacheLock = new Object();
     private final WeakHashMap<Integer, WeakReference<Drawable>> mDrawableCaches = new WeakHashMap<>();
     private boolean mDrawableEmpty;
@@ -54,6 +59,7 @@ public class SkinCompatUserThemeManager {
         } catch (JSONException e) {
             mColorNameStateMap.clear();
             mDrawablePathAndAngleMap.clear();
+            mDrawableResIdMap.clear();
             if (Slog.DEBUG) {
                 Slog.i(TAG, "startLoadFromSharedPreferences error: " + e);
             }
@@ -83,11 +89,17 @@ public class SkinCompatUserThemeManager {
                         if (!TextUtils.isEmpty(drawableName) && !TextUtils.isEmpty(drawablePathAndAngle)) {
                             mDrawablePathAndAngleMap.put(drawableName, drawablePathAndAngle);
                         }
+                    } else if (KEY_TYPE_DRAWABLE_ID.equals(type)) {
+                        String drawableName = jsonObject.getString(KEY_DRAWABLE_NAME);
+                        int drawableId = jsonObject.getInt(KEY_DRAWABLE_ID);
+                        if (!TextUtils.isEmpty(drawableName) && checkResIdValid(drawableId)) {
+                            mDrawableResIdMap.put(drawableName, drawableId);
+                        }
                     }
                 }
             }
             mColorEmpty = mColorNameStateMap.isEmpty();
-            mDrawableEmpty = mDrawablePathAndAngleMap.isEmpty();
+            mDrawableEmpty = mDrawablePathAndAngleMap.isEmpty() && mDrawableResIdMap.isEmpty();
         }
     }
 
@@ -109,6 +121,16 @@ public class SkinCompatUserThemeManager {
                 jsonArray.put(object.putOpt(KEY_TYPE, KEY_TYPE_DRAWABLE)
                         .putOpt(KEY_DRAWABLE_NAME, drawableName)
                         .putOpt(KEY_DRAWABLE_PATH_AND_ANGLE, mDrawablePathAndAngleMap.get(drawableName)));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        for (String drawableName : mDrawableResIdMap.keySet()) {
+            JSONObject object = new JSONObject();
+            try {
+                jsonArray.put(object.putOpt(KEY_TYPE, KEY_TYPE_DRAWABLE_ID)
+                        .putOpt(KEY_DRAWABLE_NAME, drawableName)
+                        .putOpt(KEY_DRAWABLE_ID, mDrawableResIdMap.get(drawableName)));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -205,6 +227,18 @@ public class SkinCompatUserThemeManager {
         }
     }
 
+    public void addDrawableId(@DrawableRes int drawableRes, @DrawableRes int drawableResId) {
+        if (!checkResIdValid(drawableResId)) {
+            return;
+        }
+        String entry = getEntryName(drawableRes, KEY_TYPE_DRAWABLE);
+        if (!TextUtils.isEmpty(entry)) {
+            mDrawableResIdMap.put(entry, drawableResId);
+            removeDrawableInCache(drawableRes);
+            mDrawableEmpty = false;
+        }
+    }
+
     public void addDrawablePath(@DrawableRes int drawableRes, String drawablePath, int angle) {
         if (!checkPathValid(drawablePath)) {
             return;
@@ -223,7 +257,15 @@ public class SkinCompatUserThemeManager {
         if (!TextUtils.isEmpty(entry)) {
             mDrawablePathAndAngleMap.remove(entry);
             removeDrawableInCache(drawableRes);
-            mDrawableEmpty = mDrawablePathAndAngleMap.isEmpty();
+            mDrawableEmpty = mDrawablePathAndAngleMap.isEmpty() && mDrawableResIdMap.isEmpty();
+        }
+    }
+    public void removeDrawableResId(@DrawableRes int drawableRes) {
+        String entry = getEntryName(drawableRes, KEY_TYPE_DRAWABLE);
+        if (!TextUtils.isEmpty(entry)) {
+            mDrawableResIdMap.remove(entry);
+            removeDrawableInCache(drawableRes);
+            mDrawableEmpty = mDrawablePathAndAngleMap.isEmpty() && mDrawableResIdMap.isEmpty();
         }
     }
 
@@ -252,6 +294,14 @@ public class SkinCompatUserThemeManager {
         if (drawable == null) {
             String entry = getEntryName(drawableRes, KEY_TYPE_DRAWABLE);
             if (!TextUtils.isEmpty(entry)) {
+                int resId = mDrawableResIdMap.get(entry);
+                if(checkResIdValid(resId)){
+
+                    Context context = SkinCompatManager.getInstance().getContext();
+                    Drawable drawablex = SkinCompatResources.getInstance().getCustomDrawable(context, resId);
+                    if(drawablex!= null)
+                        return drawablex;
+                }
                 String drawablePathAndAngle = mDrawablePathAndAngleMap.get(entry);
                 if (!TextUtils.isEmpty(drawablePathAndAngle)) {
                     String[] splits = drawablePathAndAngle.split(":");
@@ -290,6 +340,7 @@ public class SkinCompatUserThemeManager {
 
     public void clearDrawables() {
         mDrawablePathAndAngleMap.clear();
+        mDrawableResIdMap.clear();
         clearDrawableCaches();
         mDrawableEmpty = true;
         apply();
@@ -393,5 +444,9 @@ public class SkinCompatUserThemeManager {
             Slog.i(TAG, "Invalid drawable path : " + path);
         }
         return valid;
+    }
+    private static boolean checkResIdValid(@DrawableRes int resId) {
+        int checkedResId = SkinCompatHelper.checkResourceId(resId);
+        return checkedResId != INVALID_ID;
     }
 }
