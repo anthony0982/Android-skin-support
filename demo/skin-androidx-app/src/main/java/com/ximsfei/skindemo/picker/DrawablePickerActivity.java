@@ -45,7 +45,8 @@ public class DrawablePickerActivity extends BaseActivity {
         mAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                SkinCompatUserThemeManager.get().addDrawablePath(R.drawable.windowBackground, mAdapter.getItem(position));
+//                SkinCompatUserThemeManager.get().addDrawablePath(R.drawable.windowBackground, mAdapter.getItem(position));
+                SkinCompatUserThemeManager.get().addDrawableId(R.drawable.windowBackground, R.drawable.graident_shape_night);
                 SkinCompatManager.getInstance().notifyUpdateSkin();
             }
         });

@@ -205,6 +205,22 @@ public class SkinCompatResources {
         return context.getResources().getDrawable(resId);
     }
 
+    public Drawable getCustomDrawable(Context context, int resId) {
+        if (mStrategy != null) {
+            Drawable drawable = mStrategy.getDrawable(context, mSkinName, resId);
+            if (drawable != null) {
+                return drawable;
+            }
+        }
+        if (!isDefaultSkin) {
+            int targetResId = getTargetResId(context, resId);
+            if (targetResId != 0) {
+                return mResources.getDrawable(targetResId);
+            }
+        }
+        return context.getResources().getDrawable(resId);
+    }
+
     Drawable getStrategyDrawable(Context context, int resId) {
         if (mStrategy != null) {
             return mStrategy.getDrawable(context, mSkinName, resId);
