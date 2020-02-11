@@ -86,13 +86,10 @@ public class SkinCompatUserThemeManager {
                     } else if (KEY_TYPE_DRAWABLE.equals(type)) {
                         String drawableName = jsonObject.getString(KEY_DRAWABLE_NAME);
                         String drawablePathAndAngle = jsonObject.getString(KEY_DRAWABLE_PATH_AND_ANGLE);
+                        int drawableId = jsonObject.getInt(KEY_DRAWABLE_ID);
                         if (!TextUtils.isEmpty(drawableName) && !TextUtils.isEmpty(drawablePathAndAngle)) {
                             mDrawablePathAndAngleMap.put(drawableName, drawablePathAndAngle);
-                        }
-                    } else if (KEY_TYPE_DRAWABLE_ID.equals(type)) {
-                        String drawableName = jsonObject.getString(KEY_DRAWABLE_NAME);
-                        int drawableId = jsonObject.getInt(KEY_DRAWABLE_ID);
-                        if (!TextUtils.isEmpty(drawableName) && checkResIdValid(drawableId)) {
+                        } else if (!TextUtils.isEmpty(drawableName) && checkResIdValid(drawableId)) {
                             mDrawableResIdMap.put(drawableName, drawableId);
                         }
                     }
@@ -128,7 +125,7 @@ public class SkinCompatUserThemeManager {
         for (String drawableName : mDrawableResIdMap.keySet()) {
             JSONObject object = new JSONObject();
             try {
-                jsonArray.put(object.putOpt(KEY_TYPE, KEY_TYPE_DRAWABLE_ID)
+                jsonArray.put(object.putOpt(KEY_TYPE, KEY_TYPE_DRAWABLE)
                         .putOpt(KEY_DRAWABLE_NAME, drawableName)
                         .putOpt(KEY_DRAWABLE_ID, mDrawableResIdMap.get(drawableName)));
             } catch (JSONException e) {
@@ -294,14 +291,18 @@ public class SkinCompatUserThemeManager {
         if (drawable == null) {
             String entry = getEntryName(drawableRes, KEY_TYPE_DRAWABLE);
             if (!TextUtils.isEmpty(entry)) {
-                int resId = mDrawableResIdMap.get(entry);
-                if(checkResIdValid(resId)){
 
-                    Context context = SkinCompatManager.getInstance().getContext();
-                    Drawable drawablex = SkinCompatResources.getInstance().getCustomDrawable(context, resId);
-                    if(drawablex!= null)
-                        return drawablex;
+                Object entryValue = mDrawableResIdMap.get(entry);
+                if(entryValue!= null && entryValue instanceof Integer ){
+                    int resId = (Integer) entryValue;
+                    if(checkResIdValid(resId)) {
+                        Context context = SkinCompatManager.getInstance().getContext();
+                        drawable = SkinCompatResources.getInstance().getCustomDrawable(context, resId);
+                        if (drawable != null)
+                            return drawable;
+                    }
                 }
+
                 String drawablePathAndAngle = mDrawablePathAndAngleMap.get(entry);
                 if (!TextUtils.isEmpty(drawablePathAndAngle)) {
                     String[] splits = drawablePathAndAngle.split(":");
