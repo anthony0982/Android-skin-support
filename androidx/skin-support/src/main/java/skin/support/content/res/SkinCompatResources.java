@@ -6,10 +6,7 @@ import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
-
 import androidx.annotation.AnyRes;
-
-import android.os.Build;
 import android.text.TextUtils;
 import android.util.TypedValue;
 
@@ -163,18 +160,10 @@ public class SkinCompatResources {
         if (!isDefaultSkin) {
             int targetResId = getTargetResId(context, resId);
             if (targetResId != 0) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    return mResources.getColorStateList(targetResId, context.getTheme());
-                } else {
-                    return mResources.getColorStateList(targetResId);
-                }
+                return mResources.getColorStateList(targetResId);
             }
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            return context.getResources().getColorStateList(resId, context.getTheme());
-        } else {
-            return context.getResources().getColorStateList(resId);
-        }
+        return context.getResources().getColorStateList(resId);
     }
 
     private Drawable getSkinDrawable(Context context, int resId) {
@@ -206,6 +195,10 @@ public class SkinCompatResources {
     }
 
     public Drawable getCustomDrawable(Context context, int resId) {
+        ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
+        if (colorStateList != null) {
+            return new ColorDrawable(colorStateList.getDefaultColor());
+        }
         if (mStrategy != null) {
             Drawable drawable = mStrategy.getDrawable(context, mSkinName, resId);
             if (drawable != null) {
