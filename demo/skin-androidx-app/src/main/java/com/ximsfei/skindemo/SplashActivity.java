@@ -29,6 +29,8 @@ import com.ximsfei.skindemo.test.TestActivity;
 import com.ximsfei.skindemo.window.WindowManagerActivity;
 import com.ximsfei.skindemo.zip.ZipActivity;
 
+import skin.support.content.res.SkinCompatUserThemeManager;
+
 /**
  * Created by ximsf on 2017/3/8.
  */
@@ -79,6 +81,15 @@ public class SplashActivity extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(mContext, mClasses[position]);
                 startActivity(intent);
+            }
+        });
+
+        findViewById(R.id.img).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SkinCompatUserThemeManager.get().addColorState(R.color.msg_background_color, "#0000ff");
+                SkinCompatUserThemeManager.get().apply();
             }
         });
     }

@@ -6,6 +6,7 @@
 
     <declare-styleable name="SkinCompatImageView">
         <attr name="android:src" />
+        <attr name="android:tint" />
         <attr name="srcCompat" />
     </declare-styleable>
 
