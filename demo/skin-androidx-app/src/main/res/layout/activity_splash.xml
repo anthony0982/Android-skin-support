@@ -36,7 +36,16 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_gravity="center"
+            android:visibility="gone"
             android:src="@drawable/btn_check_to_on_mtrl_015"
             android:tint="@color/msg_background_color" />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:text="testaaa"
+            android:textColor="@color/msg_background_color"/>
     </FrameLayout>
 </LinearLayout>

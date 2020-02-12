@@ -29,6 +29,8 @@ import com.ximsfei.skindemo.test.TestActivity;
 import com.ximsfei.skindemo.window.WindowManagerActivity;
 import com.ximsfei.skindemo.zip.ZipActivity;
 
+import org.w3c.dom.Text;
+
 import skin.support.content.res.SkinCompatUserThemeManager;
 
 /**
@@ -90,6 +92,15 @@ public class SplashActivity extends BaseActivity {
 
                 SkinCompatUserThemeManager.get().addColorState(R.color.msg_background_color, "#0000ff");
                 SkinCompatUserThemeManager.get().apply();
+            }
+        });
+        final TextView tv = findViewById(R.id.text);
+        findViewById(R.id.text).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SkinCompatUserThemeManager.get().addColorState(R.color.msg_background_color, "#0000ff");
+                SkinCompatUserThemeManager.get().apply();
+                tv.setText("Clikced");
             }
         });
     }
