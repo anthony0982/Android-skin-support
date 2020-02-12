@@ -83,6 +83,12 @@ public class SkinCompatTextView extends AppCompatTextView implements SkinCompatS
     }
 
     @Override
+    public void setText(CharSequence text, BufferType type) {
+        super.setText(text, type);
+        applySkin();
+    }
+
+    @Override
     public void applySkin() {
         if (mBackgroundTintHelper != null) {
             mBackgroundTintHelper.applySkin();
