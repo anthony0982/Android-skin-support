@@ -1,9 +1,10 @@
 package skin.support.widget;
 
 import android.content.Context;
+import android.util.AttributeSet;
+
 import androidx.annotation.DrawableRes;
 import androidx.appcompat.widget.AppCompatImageView;
-import android.util.AttributeSet;
 
 /**
  * Created by ximsfei on 2017/1/10.
