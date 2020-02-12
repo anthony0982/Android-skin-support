@@ -195,6 +195,10 @@ public class SkinCompatResources {
     }
 
     public Drawable getCustomDrawable(Context context, int resId) {
+        ColorStateList colorStateList = SkinCompatUserThemeManager.get().getColorStateList(resId);
+        if (colorStateList != null) {
+            return new ColorDrawable(colorStateList.getDefaultColor());
+        }
         if (mStrategy != null) {
             Drawable drawable = mStrategy.getDrawable(context, mSkinName, resId);
             if (drawable != null) {

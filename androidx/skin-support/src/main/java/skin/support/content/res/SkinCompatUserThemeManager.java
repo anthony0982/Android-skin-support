@@ -298,7 +298,8 @@ public class SkinCompatUserThemeManager {
                     if(checkResIdValid(resId)) {
                         Context context = SkinCompatManager.getInstance().getContext();
                         drawable = SkinCompatResources.getInstance().getCustomDrawable(context, resId);
-                        if (drawable != null)
+                        String targetEntry = getEntryName(resId, KEY_TYPE_DRAWABLE);
+                        if (drawable != null && TextUtils.equals(targetEntry, entry))
                             return drawable;
                     }
                 }
