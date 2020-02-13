@@ -31,6 +31,7 @@ import com.ximsfei.skindemo.zip.ZipActivity;
 
 import org.w3c.dom.Text;
 
+import skin.support.content.res.ColorState;
 import skin.support.content.res.SkinCompatUserThemeManager;
 
 /**
@@ -99,6 +100,7 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 SkinCompatUserThemeManager.get().addColorState(R.color.msg_background_color, "#0000ff");
+                SkinCompatUserThemeManager.get().addColorState(R.color.darkable_switch_track_tint_color, new ColorState.ColorBuilder().setColorChecked("#000000").setColorDefault("#00ff00").build());
                 SkinCompatUserThemeManager.get().apply();
                 tv.setText("Clikced");
             }

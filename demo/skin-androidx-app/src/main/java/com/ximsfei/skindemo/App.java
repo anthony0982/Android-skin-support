@@ -9,6 +9,7 @@ import com.ximsfei.skindemo.loader.ZipSDCardLoader;
 import skin.support.SkinCompatManager;
 import skin.support.app.SkinAppCompatViewInflater;
 import skin.support.app.SkinCardViewInflater;
+import skin.support.app.SkinSwitchInflater;
 import skin.support.circleimageview.app.SkinCircleImageViewInflater;
 import skin.support.constraint.app.SkinConstraintViewInflater;
 import skin.support.design.app.SkinMaterialViewInflater;
@@ -36,6 +37,7 @@ public class App extends Application {
                 .addStrategy(new CustomSDCardLoader())          // 自定义加载策略，指定SDCard路径
                 .addStrategy(new ZipSDCardLoader())             // 自定义加载策略，获取zip包中的资源
                 .addInflater(new SkinAppCompatViewInflater())   // 基础控件换肤
+                .addInflater(new SkinSwitchInflater())
                 .addInflater(new SkinMaterialViewInflater())    // material design
                 .addInflater(new SkinConstraintViewInflater())  // ConstraintLayout
                 .addInflater(new SkinCardViewInflater())        // CardView v7
