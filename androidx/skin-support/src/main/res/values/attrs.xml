@@ -38,5 +38,6 @@
     </declare-styleable>
     <declare-styleable name="SkinCompatTint">
         <attr name="drawableTint" />
+        <attr name="trackTint" />
     </declare-styleable>
 </resources>
