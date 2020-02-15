@@ -72,19 +72,19 @@ public class SkinCompatProgressBarHelper extends SkinCompatHelper {
                 SkinCompatVersionUtils.setV4DrawableWrapperWrappedDrawable(drawable, inner);
             }
         } else if (drawable instanceof LayerDrawable) {
-            LayerDrawable background = (LayerDrawable) drawable;
-            final int N = background.getNumberOfLayers();
+            LayerDrawable layerDrawable = (LayerDrawable) drawable;
+            final int N = layerDrawable.getNumberOfLayers();
             Drawable[] outDrawables = new Drawable[N];
 
             for (int i = 0; i < N; i++) {
-                int id = background.getId(i);
-                outDrawables[i] = tileify(background.getDrawable(i),
-                        (id == android.R.id.progress || id == android.R.id.secondaryProgress));
+                int id = layerDrawable.getId(i);
+                outDrawables[i] = tileify(layerDrawable.getDrawable(i),
+                        (id == android.R.id.progress || id == android.R.id.secondaryProgress || id == android.R.id.background));
             }
             LayerDrawable newBg = new LayerDrawable(outDrawables);
 
             for (int i = 0; i < N; i++) {
-                newBg.setId(i, background.getId(i));
+                newBg.setId(i, layerDrawable.getId(i));
             }
 
             return newBg;
