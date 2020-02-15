@@ -3,6 +3,7 @@ package skin.support.widget;
 import android.content.res.ColorStateList;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
@@ -43,12 +44,16 @@ public class SkinCompatTextViewDrawableTintHelper extends SkinCompatHelper {
             ColorStateList tintList = SkinCompatResources.getColorStateList(mTextView.getContext(), drawableTintResId);
             for (Drawable drawable : mTextView.getCompoundDrawables()) {
                 if (drawable != null)
-                    drawable.setTintList(tintList);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        drawable.setTintList(tintList);
+                    }
             }
         } else if (this.tintColorStateList != null) {
             for (Drawable drawable : mTextView.getCompoundDrawables()) {
                 if (drawable != null)
-                    drawable.setTintList(tintColorStateList);
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                        drawable.setTintList(tintColorStateList);
+                    }
             }
         }
     }
